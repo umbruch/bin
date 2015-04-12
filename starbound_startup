@@ -1,0 +1,16 @@
+#!/bin/bash
+###############################################
+# desc: restart Starbound-Server
+# autor: seevenup
+# version: 0.1
+###############################################
+PID=$(ps -ef | grep starbound_server | grep -v grep | cut -d " " -f6)
+
+PATH="/opt/steamcmd/Steam/steamapps/common/Starbound/linux64/"
+
+#kill server
+kill -9 $PID 2> /dev/null
+
+#start server
+cd "$PATH"
+./starbound_server > /dev/null &

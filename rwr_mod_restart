@@ -1,0 +1,16 @@
+#!/bin/bash
+###############################################
+# desc: restart RunningWithRifles mod
+# autor: seevenup
+# version: 0.1
+###############################################
+PID=$(ps -ef | grep "RunningWithRifles" | grep "start_" | grep -v grep | cut -d " " -f7)
+
+# change install path
+PATH="/opt/steamcmd/Steam/steamapps/common/RunningWithRifles"
+
+# kill the running mod
+kill -9 $PID 2> /dev/null
+
+# start mod in background
+/usr/bin/php $PATH/media/packages/vanilla/scripts/start_invasion.php &

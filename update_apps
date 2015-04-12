@@ -1,0 +1,5 @@
+#!/bin/bash
+#Starbound
+/opt/steamcmd/steamcmd.sh +login svenlauber Cherokee1983 +app_update 211820 +quit
+#Running with Riffles
+/opt/steamcmd/steamcmd.sh +login svenlauber Cherokee1983 +app_update 270150 +quit

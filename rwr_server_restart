@@ -1,0 +1,19 @@
+#!/bin/bash
+###############################################
+# desc: restart RunningWithRifles server
+# autor: seevenup
+# version: 0.1
+###############################################
+PID=$(ps -ef | grep RunningWithRifles | grep rwr_server | grep -v "grep"| cut -d " " -f7)
+
+# change install path
+PATH="/opt/steamcmd/Steam/steamapps/common/RunningWithRifles"
+
+# kill the running server
+kill -9 $PID 2> /dev/null 
+
+# start server
+export LD_LIBRARY_PATH="$PATH/lib:$LD_LIBRARY_PATH"
+
+cd "$PATH/"
+exec "$PATH/rwr_server" > /dev/null &
