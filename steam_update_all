@@ -1,4 +1,10 @@
 #!/bin/bash
+##########################################
+# desc: Aktualisiert alle steam apps
+# autor: seevenup
+# version: 0.1
+##########################################
+
 PATH_STEAM="/opt/steamcmd"
 
 for app in $(/bin/ls $PATH_STEAM/Steam/steamapps/appmanifest_* | cut -d '_' -f2 | cut -d '.' -f1)
