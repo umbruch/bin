@@ -9,6 +9,6 @@ PATH_STEAM="/opt/steamcmd"
 
 for app in $(/bin/ls $PATH_STEAM/Steam/steamapps/appmanifest_* | cut -d '_' -f2 | cut -d '.' -f1)
 do
-	/opt/steamcmd/steamcmd.sh +login svenlauber Cherokee1983 +app_update $app +quit
+	$PATH_STEAM/steamcmd.sh +login svenlauber Cherokee1983 +app_update $app +quit
 done
 
